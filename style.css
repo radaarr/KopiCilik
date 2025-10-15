@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
+  padding: 10px 30px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -35,20 +35,17 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Logo container */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
 
 .logo {
-  width: 45px;
-  height: 45px;
-}
-
-header h1 {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
 }
 
 /* Navigasi */
@@ -66,22 +63,23 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   text-decoration: underline;
 }
 
 /* Hero section */
 .hero {
   position: relative;
-  background: url('images/bg.jpg') no-repeat center center/cover;
+  background: url('../images/bg.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
   padding: 180px 20px 120px;
-  margin-top: 75px;
-  overflow: hidden; /* biar overlay nggak keluar area */
+  margin-top: 70px;
+  overflow: hidden;
 }
 
-/* Overlay transparan di atas gambar */
+/* Overlay transparan biar foto gak terlalu gelap */
 .hero::before {
   content: "";
   position: absolute;
@@ -89,11 +87,10 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* warna hitam transparan 40% */
+  background-color: rgba(112, 66, 20, 0.4); /* efek hangat kopi */
   z-index: 0;
 }
 
-/* Biar teksnya muncul di atas overlay */
 .hero h2,
 .hero p {
   position: relative;
@@ -156,5 +153,10 @@ footer {
 
   .hero {
     padding: 140px 20px 100px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
   }
 }
